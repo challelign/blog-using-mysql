@@ -10,7 +10,7 @@ $lightGreen: #b9e7e7;
       text-decoration: none;
       color: inherit;
     }
-    //LOGIN & REGISTER
+    //LOGIN & REGISTER Component
 
     .auth {
       display: flex;
@@ -61,7 +61,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //NAVBAR
+    //NAVBAR Component
 
     .navbar {
       .container {
@@ -109,7 +109,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //FOOTER
+    //FOOTER Component
 
     footer {
       margin-top: 100px;
@@ -124,7 +124,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //HOME
+    //HOME Component
 
     .home {
       .posts {
@@ -197,7 +197,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //SINGLE
+    //SINGLE Component
 
     .single {
       display: flex;
@@ -253,6 +253,9 @@ $lightGreen: #b9e7e7;
           line-height: 30px;
         }
       }
+
+
+      // Menu Component
       .menu {
         flex: 2;
         display: flex;
@@ -298,7 +301,7 @@ $lightGreen: #b9e7e7;
       }
     }
 
-    //WRITE
+    //WRITE Component
 
     .add {
       margin-top: 20px;
