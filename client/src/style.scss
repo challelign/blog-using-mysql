@@ -136,7 +136,7 @@ $lightGreen: #b9e7e7;
         .post {
           display: flex;
           gap: 100px;
-
+// if the list of item is odd
           &:nth-child(2n + 1) {
             flex-direction: row-reverse;
           }
