@@ -8,17 +8,39 @@ import moment from 'moment';
 import { useContext } from 'react';
 import DOMPurify from 'dompurify';
 
-const Single = () => {
+const Single = ({match}) => {
+
+
+  const [post, setPost] = useState([]);
+  const location = useLocation()
+  const baseApi = 'http://127.0.0.1:8800/api/';
+  // const baseApi = 'http://127.0.0.1:8800/api/';
+  const postId = location.pathname.split("/")[2]
+  useEffect(() =>{
+    const fetchData = async()=>{
+      try {
+        const res = await axios.get(`${baseApi}posts/${postId}`); 
+        setPost(res.data);
+      } catch (err) {
+        console.log(err)
+      }
+    }
+
+    fetchData();
+  },[postId])
+
+
+
   return (
     <div className='single'>
       <div className='content'>
         <img
-          src='https://images.pexels.com/photos/4230630/pexels-photo-4230630.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'
+          src= {post?.img}
           alt=''
         />
         <div className='user'>
           <div className='info'>
-            <span>Chalie</span>
+            <span>{post.username}</span>
             <p>Posted 2 day ago</p>
           </div>
 
@@ -29,12 +51,10 @@ const Single = () => {
             <img src={Delete}></img>
           </div>
         </div>
-        <h1>this is para</h1>
+        <h1>{post.title}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-          officiis sint officia suscipit ratione rerum voluptate iusto non sit
-          tempora minima, quisquam quod ea sed consequatur sequi. Ea, dicta
-          quam!
+         
+         {post.desc}
         </p>
       </div>
 
